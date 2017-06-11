@@ -1,3 +1,14 @@
+html{
+	overflow-y: auto !important;
+}
+body{
+	background: url('../../../img/bg.jpg')  no-repeat #243a00 !important;
+	background-position-x: -521.5px !important;
+	height: 100%;
+	overflow-y: auto !important;
+}
 .mainContainer{
-  color: #00a2c2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
