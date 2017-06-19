@@ -3,18 +3,21 @@ import {IndexRoute, Route, Router} from 'react-router';
 import {
 	App,
 	Home,
+	Main,
+	Login,
 	NotFound,
 	Offers,
 } from './containers';
+import requireAuthentication from './components/Login/AunthenticatedComponent.js'
 
 
+export const routes = (
 
-export default () => {
-  return (
 	  <Route path="/" component={App}>
 	    <IndexRoute component={Home} title="Главная"/>
-	    <Route path="main" component={Offers} />
+	     <Route path='/main' component={Main} />
+	   <Route path="offers/" component={Offers} />
 	    <Route path="*" component={NotFound} status={404} />
 	  </Route>
-    );
-};
+    
+);

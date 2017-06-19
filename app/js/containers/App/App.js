@@ -1,5 +1,7 @@
 import React, {Component} from "react";
-import {Footer} from '../../components';
+//import {Footer} from '../../components';
+import {Login} from '../../components/Login/Login.js';
+import {loginActions} from '../../components/Actions/loginActions';
 import {Link} from 'react-router';
 const styles = require("./App.scss");
 

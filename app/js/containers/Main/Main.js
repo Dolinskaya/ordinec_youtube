@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-
+//import Menu from '../../components/Menu/Menu.js';
 
 var clientData = {
 	cliend_id: 1,
@@ -19,6 +19,9 @@ export default class Main extends Component {
     return (
       <div className="home">
         <div className="wrapper">
+        {/*<div className="importMenu">
+        	<Menu />
+        </div>*/}
         	<aside className="right-side">
 		
 				<div className="main-page">

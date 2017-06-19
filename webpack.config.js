@@ -17,7 +17,7 @@ module.exports = {
 
 	entry: {
 		//для работы в режеми development в качестве входной точки так же нужно указать webpack/hot/dev-server
-		app: development ? ["webpack/hot/dev-server", "./app/main.js"] : ["./app/main.js"]
+		app: development ? ["webpack/hot/dev-server", "./app/index.js"] : ["./app/index.js"]
 	},
 	output: {
 		//все собранные файлы будут сохраняться в path
@@ -61,5 +61,9 @@ module.exports = {
 			}
 		]
 	},
+	// node: {
+	// 	net: 'empty',
+	// 	dns: 'empty'
+	// },
 	plugins: development ? [definePlugin] : [new ExtractTextPlugin("bundle.css"), definePlugin]
 };

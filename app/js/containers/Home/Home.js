@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import Login from '../../components/Login/Login';
+import NavLink from '../../components/NavLink/NavLink'
 
 require('./Home.scss');
 
@@ -25,7 +27,8 @@ export default class Home extends Component {
 			<span className="t-green"><br />или </span>
 			<a href="" className="signin">войти в свой аккаунт</a>
 		</div>
-		<form action="">
+		{/*
+		<form onSubmit={this.onSubmit}>
 			<input type="text" className="form_username" />
 			<input type="password" className="form_password" />
 			<a href="" className="reset-psw">Восстановить пароль</a>
@@ -33,6 +36,9 @@ export default class Home extends Component {
 			<label className="rem-me" htmlFor="remember">Запомнить меня</label>
 			<br /><button type="submit" className="entry">войти</button>
 		</form>
+		*/}
+		<Login />
+		{/*<NavLink to="/login">Войти</NavLink>*/}
 		<div className="content">
 			<h1 className="content_title">Преимущества <br /></h1>
 			<p className="content_desc">работы с Ордынцем</p>

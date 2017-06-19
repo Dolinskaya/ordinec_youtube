@@ -2,8 +2,8 @@
 		height: 1000px;
 }
 .mainPage{
-	background: url('../../../img/main-bg.jpg') no-repeat #437d0f;
-	background-position: top;
+	//background: url('../../../img/main-bg.jpg') no-repeat #437d0f;
+	//background-position: top;
 }
 .wrapper{
 	width: 980px;
@@ -14,32 +14,33 @@
 	}
 }
 .header {
+	width: 292px;
+	margin: auto;
     height: 200px;
-    margin-top: 38px;
+    margin-top: 86px;
+    background: url('../../../img/logo.png') no-repeat;
+    &_link{
+    	text-decoration: none;
+    }
     &_bg{
     	margin: auto;
     	left: 351px;
     	top: 50px;
     	text-align: center;
-    	//position: relative;
     }
 	&_small-text {
-		position: relative;
 		color: #fff;
 		font-size: 15px;
-		top: 44px;
-		margin: -39px 53px 35px 447px;
+		margin: -39px 53px 35px 99px;
 	}
 	&__logo-text{
-		margin: -9px 53px 35px 398px;
-		position: absolute;
-		top: 71px;
+		margin: -29px 53px 35px 47px;
 		font-size: 38px;
 		text-transform: uppercase;
 		color: #fff;
 	}
 	&_desc{
-		margin-top: 110px;
+		margin-top: 60px;
 		text-align: center;
 		color: #fff;
 		text-transform: uppercase;
@@ -161,7 +162,7 @@ display: flex;
 .reg{
 	width: 330px;
 	margin: auto;
-	margin-top: 164px;
+	margin-top: 86px;
 	text-transform: uppercase;
 	color: #fff;
 	& p{
