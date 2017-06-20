@@ -34,6 +34,7 @@
     "node-sass": "~3.10.1",
     "react": "^15.3.2",
     "react-dom": "~15.3.2",
+    "react-font-face": "^0.2.1",
     "react-helmet": "^3.2.3",
     "react-hot-loader": "~3.0.0-beta.6",
     "react-redux": "~4.4.5",

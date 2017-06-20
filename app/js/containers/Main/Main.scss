@@ -3,13 +3,13 @@
 		height: 1000px;
 }
 .wrapper {
-	min-width: 1260px;
-	max-width: 1600px;
+	//min-width: 1260px;
+	//max-width: 1600px;
 	height: 100%;
 	//margin: 50px 50px 0;
-	margin: auto;
+	//margin: auto;
 	display: table;
-	//width: 93%;
+	width: 100%;
 }
 .container{
 	height: 100%;
@@ -64,8 +64,10 @@ h1 {
 	text-transform: uppercase;
 	display: block;
 	color: #fff;
+	margin: 0;
 	text-align: center;
-	//margin-left: 27%;
+	margin-left: 344px;
+	margin-top: -10px;
 }
 
 
@@ -74,10 +76,9 @@ h1 {
 	width: 922px;
 	position: absolute;
     display: block;
-    margin: -71px auto 0;
     z-index: 11;
-    top: 42.3%;
-    left: 29%;
+    top: 47.7%;
+    left: 18%;
     height: 370px;
     transform: scale(0.5);
 }
@@ -106,13 +107,10 @@ h1>span {
 .big-ork {
 	background: url('../../../img/orc-lvl1.png') no-repeat;
 	background-position-x: 99%;
-	text-align: center;
-	margin-top: -12%;
-	position: relative;
-	left: 4%;
-	//width: 97%;
+	margin-top: -173px;
+	margin-left: 152px;
 	height: 734px;
-	width: 100%;
+	width: 837px;
 	transform: scale(0.61);
 }
 
@@ -134,6 +132,7 @@ h1>span {
 	background: #1c415a;
 	border: none;
 	color: #fff;
+	margin-left: 271px;
 	cursor: pointer;
 
 	&:hover{
@@ -144,10 +143,11 @@ h1>span {
 .graph-overlay {
 	padding: 30px;
 	background: #1c415a;
-	position: relative;
-	margin-top: 12%;
-	//bottom: 0;
-	left: 20%;
+	position: absolute;
+	width: 100%;
+	top: 810px;
+	left: 310px;
+	bottom: 683px;
 	height: 440px;
 }
 
@@ -194,8 +194,11 @@ h1>span {
 }
 .right-side {
 	background: none;
-	//display: table-cell;
-	//vertical-align: top;
+	width: 900px;
+	height: 900px;
+	position: relative;
+	margin: auto;
+	top: -1188px;
 }
 
 .global-information {
@@ -435,121 +438,28 @@ table.data-table a {
 	color: #04748c;
 }
 
-.lk-logo {
-	width: 292px;
-	height: 82px;
-	position: absolute;
-	top: -32px;
-    left: -28px;
-}
+// .lk-logo {
+// 	width: 292px;
+// 	height: 82px;
+// 	position: absolute;
+// 	top: -32px;
+//     left: -28px;
+// }
 
-.lk-logo span>a {
-	display: block;
-    text-align: center;
-    font: 10px 'Tahoma';
-    color: #748c9c;
-    margin: 5px 0;
-}
+// .lk-logo span>a {
+// 	display: block;
+//     text-align: center;
+//     font: 10px 'Tahoma';
+//     color: #748c9c;
+//     margin: 5px 0;
+// }
 
-.lk-logo>a {
-	display: block;
-    text-align: center;
-    font: 40px 'Bemount-line'!important;
-    line-height: 55px;
-    text-transform: uppercase;
-    margin-top: 9px;
-}
+// .lk-logo>a {
+// 	display: block;
+//     text-align: center;
+//     font: 40px 'Bemount-line'!important;
+//     line-height: 55px;
+//     text-transform: uppercase;
+//     margin-top: 9px;
+// }
 
-.nav-wrap {
-	padding-top: 61px;
-
-}
-
-.nav-wrap>a>img {
-	display: block;
-	margin: 0 auto 10px;
-	width: 61px;
-}
-
-.nav-wrap a {
-	font-family: 'Bemount';
-	color: #fff;
-}
-
-.nav {
-	padding: 10px 0;
-}
-
-.nav>ul {
-	margin-left: 30px;
-}
-
-.nav>ul>li>a>div {
-	width: 45px;
-	height: 32px;
-	float: left;
-}
-
-.nav>ul>li>a img {
-	margin: 8px 0 0 23px;
-	width: 15px;
-}
-
-.nav>ul>li>a {
-	margin-bottom: 2px;
-}
-
-.nav>ul>li {
-	min-height: 38px;
-}
-
-.nav a {
-	font-family: 'Bemount';
-	color: #fff;
-	text-transform: uppercase;
-}
-
-.nav ul ul a {
-	font-size: 14px;
-	padding: 3px 7px;
-}
-
-.nav>ul>li>a {
-	line-height: 32px;
-	cursor: pointer;
-	padding: 6px 10px;
-	font-size: 17px;
-}
-
-.nav>ul>li>a:hover {
-	background: #fff;
-	color: #1c415a;
-}
-
-.nav>ul ul a:hover {
-	background: #fff;
-	color: #1c415a;
-}
-
-.nav>ul>li>a.active {
-	background: #f1f1f1;
-	color: #1c415a;
-}
-
-.nav>ul>li.active ul {
-	display: block!important;
-}
-
-.nav>ul ul a.active {
-	color: #1c415a;
-	background: #fff;
-}
-
-.nav>ul ul {
-	margin: 10px 0 10px 30px;
-	display: none;
-}
-
-.nav>ul ul li {
-	height: 23px;
-}

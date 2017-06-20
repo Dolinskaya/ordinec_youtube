@@ -1,0 +1,181 @@
+// @font-face {
+//   font-family: 'Bemount';
+//   src: url(../../../font/Bemount.otf);
+// }
+
+// @font-face {
+//   font-family: 'Bemount-line';
+//   src: url(../../../font/Bemount-line.otf);
+// }
+
+// @font-face {
+//   font-family: 'OS-italic';
+//   src: url(../../../font/OPENSANS-ITALIC.ttf);
+// }
+
+// @font-face {
+//   font-family: 'OS-light';
+//   src: url(../../../font/OPENSANS-LIGHT.ttf);
+// }
+
+// @font-face {
+//   font-family: 'OS-semibold';
+//   src: url(../../../font/OPENSANS-SEMIBOLD.ttf);
+// }
+
+// @font-face {
+//   font-family: 'OS';
+//   src: url(../../../font/OPENSANS-REGULAR.ttf);
+// }
+
+// @font-face {
+//   font-family: 'OS-bold';
+//   src: url(../../../font/OPENSANS-BOLD.ttf);
+// }
+
+// @font-face {
+//   font-family: 'CORP';
+//   src: url(../../../font/CO_HEADLINE_CORP.ttf);
+// }
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'OS-light';
+  font-family: 'Bemount';
+}
+.menu{
+ width: 235px;
+ margin-left: 50px;
+}
+.menu-container{
+  background: #163448;
+  display: table-cell;
+  position: relative;
+  left: 26px;
+  top: -35px;
+  font-family: 'CORP';
+  z-index: 1;
+}
+
+
+
+.menu-wrap{
+  background: url('../../../img/menu-bg.png') no-repeat;
+  padding-top: 32px;
+}
+.menu-header{
+  height: 81px !important;
+  position: relative !important;
+  z-index: 5;
+}
+.menu_bottom{
+  height: 940px;
+}
+.left-aside__table {
+    padding: 25px 30px;
+    background: #163448;
+    width: 100%;
+    color: #fff;
+    margin-top: -2px;
+}
+
+ul{
+      list-style: none;
+}
+
+
+.nav {
+  padding: 10px 0;
+}
+
+.nav>ul {
+//  margin-left: 30px;
+}
+
+.nav>ul>li>a>div {
+  width: 45px;
+  height: 32px;
+  //float: left;
+}
+
+.nav>ul>li>a img {
+  margin: 8px 0 0 23px;
+  width: 15px;
+}
+
+.nav>ul>li>a {
+  margin-bottom: 2px;
+}
+
+.nav>ul>li {
+ // min-height: 38px;
+}
+
+.nav a {
+  font-family: 'Bemount';
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav ul ul a {
+  font-size: 12px;
+  padding: 3px 7px;
+}
+
+.nav>ul>li>a {
+  line-height: 32px;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 17px;
+}
+
+
+//здесь проблема
+
+
+
+
+.emulation-thead,
+.emulation-thead__content {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: table;
+  table-layout: fixed;
+  font-size: 100%;
+  margin-top: 12px;
+}
+
+.emulation-thead__content {
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  font-size: 17px;
+  font-family: 'Bemount';
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.emulation-tbody__td {
+  padding: 5px 10px;
+  font-family: 'Bemount';
+  font-size: 14px;
+  color: #8aa8bd;
+  text-transform: uppercase;
+}
+
+.emulation-tbody__tr {
+  display: flex;
+  flex-decoration: row;
+  justify-content: space-between;
+
+}
+.lk-achivment__img{
+  background: url('../../../img/sub-orc-lvl1.png') no-repeat;
+  width: 180px;
+  margin-top: 28px;
+}

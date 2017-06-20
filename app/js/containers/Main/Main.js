@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-//import Menu from '../../components/Menu/Menu.js';
+import Menu from '../../components/Menu/Menu.js';
 
 var clientData = {
 	cliend_id: 1,
@@ -19,23 +19,20 @@ export default class Main extends Component {
     return (
       <div className="home">
         <div className="wrapper">
-        {/*<div className="importMenu">
+        <div className="importMenu">
         	<Menu />
-        </div>*/}
-        	<aside className="right-side">
-		
+        </div>
+        	<div className="right-side">
+				
 				<div className="main-page">
 					<div className="big-ork"></div>
 					<div className="chise"></div>
-					{/* remove me <div className="your-status">
-							статус <span>Собираем дань</span>
-						</div>*/}
 				</div>
-			</aside>
-			<h1>в вашей казне <span id="user-ballance">{clientData.user_ballance} руб.</span></h1>
+				<h1>в вашей казне <span id="user-ballance">{clientData.user_ballance} руб.</span></h1>
 			<div className="btn-overlay">
 			<button className="sml-btn sml-btn-blue">Заказать выплату</button>
 					</div>
+			</div>
     		{/*start canvas*/}
     		<div className="wrapper_graph">
 		        <div className="graph-overlay">

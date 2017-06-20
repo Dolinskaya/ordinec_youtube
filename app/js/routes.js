@@ -5,6 +5,7 @@ import {
 	Home,
 	Main,
 	Login,
+	Menu,
 	NotFound,
 	Offers,
 } from './containers';
@@ -16,7 +17,7 @@ export const routes = (
 	  <Route path="/" component={App}>
 	    <IndexRoute component={Home} title="Главная"/>
 	     <Route path='/main' component={Main} />
-	   <Route path="offers/" component={Offers} />
+	   <Route path="offers" component={Offers} />
 	    <Route path="*" component={NotFound} status={404} />
 	  </Route>
     

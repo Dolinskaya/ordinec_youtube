@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Login from '../../components/Login/Login';
-import NavLink from '../../components/NavLink/NavLink'
+import NavLink from '../../components/NavLink/NavLink';
 
 require('./Home.scss');
 
