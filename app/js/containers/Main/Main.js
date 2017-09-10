@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Menu from '../../components/Menu/Menu.js';
+import {getData} from "../../components/Actions/loginActions";
 
 var clientData = {
 	cliend_id: 1,

@@ -5,10 +5,11 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS
 } from '../../constants/User.js';
+import {LOGIN_RESPONSE} from "../../constants/User";
 
-const initialState = window.localStorage.getItem('accessToken') || {};
+// const initialState = window.localStorage.getItem('accessToken') || {};
 
-export default function userstate(state = initialState, action) {
+export default function userstate(state = {}, action) {
 
   switch (action.type) {
 
@@ -18,6 +19,9 @@ export default function userstate(state = initialState, action) {
 
     case LOGIN_SUCCESS:
       return {...state, name: action.payload.name, isAuthenticated: action.payload.isAuthenticated}
+
+      case LOGIN_RESPONSE:
+        return action.payload
 
     case LOGIN_FAIL:
       // TODO

@@ -3,7 +3,7 @@ import Router from 'react-router';
 import Config from '../../containers/Auth/Config.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { loginActions } from '../Actions/loginActions.js';
+import { login} from '../Actions/loginActions.js';
 
 
 
@@ -30,14 +30,13 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    // this.props.loginActions(this.state);
 
-    this.setState( { 
-      errors: {}, isLoading: true});
-    this.props.loginActions(this.state)//.then(
- //         (res) => console.log(res.data.access_token),
- 
- //         (err) => this.setState({ errors: err.data.error_description, isLoading: false })
- // );
+      this.props.login(this.state);
+
+    // this.setState( {
+    //   errors: {}, isLoading: true});
+    // this.props.loginActions(this.state)
  }
  handleChange(event) {
     this.setState({[event.target.name]: event.target.value });
@@ -69,7 +68,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(loginActions, dispatch)
+    actions: bindActionCreators(login, dispatch)
   }
 }
 
@@ -81,4 +80,4 @@ function mapDispatchToProps(dispatch) {
 //   router: React.PropTypes.object.isRequired
 // }
 
-export default connect(null, {loginActions}) (Login);
+export default connect(null, {login}) (Login);

@@ -4,9 +4,9 @@
   "description": "",
   "main": "./app/main.js",
   "scripts": {
-    "dev": "set BUILD_DEV=1 && webpack-dev-server --inline --devtool eval --progress --colors --hot --host 127.0.0.1 --port 3016 --history-api-fallback",
-    "deploy": "set BUILD_DEV=0 NODE_ENV=production && webpack -p",
-    "postinstall": "set BUILD_DEV=0 NODE_ENV=production && webpack -p"
+    "dev": "BUILD_DEV=1 webpack-dev-server --inline --devtool eval --progress --colors --hot --host 127.0.0.1 --port 3016 --history-api-fallback",
+    "deploy": "BUILD_DEV=0 NODE_ENV=production webpack -p",
+    "postinstall": "BUILD_DEV=0 NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
