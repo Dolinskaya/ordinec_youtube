@@ -6,8 +6,9 @@ import {
   LOGOUT_SUCCESS
 } from '../../constants/User.js';
 import {LOGIN_RESPONSE} from "../../constants/User";
+import userAPI from '../../components/Actions/loginActions.js';
 
-// const initialState = window.localStorage.getItem('accessToken') || {};
+const initialState = userAPI;
 
 export default function userstate(state = {}, action) {
 
@@ -21,7 +22,7 @@ export default function userstate(state = {}, action) {
       return {...state, name: action.payload.name, isAuthenticated: action.payload.isAuthenticated}
 
       case LOGIN_RESPONSE:
-        return action.payload
+        return {...state, data: action.payload.userAPI}
 
     case LOGIN_FAIL:
       // TODO

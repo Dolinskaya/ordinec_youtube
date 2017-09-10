@@ -20,19 +20,22 @@ let token;
  export function login(payload) {
    return (dispatch) => {
 
-     // dispatch({type: LOGIN_REQUEST,
-     //     payload : loginActions()
-     // })
-       dispatch(loginActions(payload))
+     dispatch({type: LOGIN_REQUEST,
+         payload : loginActions()
+     })
+       // dispatch(loginActions(payload))
 
        dispatch({
          type: LOGIN_SUCCESS,
          payload: {
-           name: payload.name,
+           name: payload.username,
            isAuthenticated: true
          }
        })
-       dispatch(getData())
+       dispatch({
+           type: LOGIN_RESPONSE,
+           payload: getData()
+       })
        dispatch({
          type: ROUTING,
          payload: {
@@ -42,6 +45,28 @@ let token;
        })
    }
  }
+
+export function getApi(payload, userAPI) {
+    return (dispatch) => {
+
+        dispatch({type: API_REQUEST,
+            payload : payload
+        })
+        dispatch({
+            type: API_SUCCESS,
+            payload: {
+                data: userAPI,
+            }
+        })
+        // dispatch({
+        //     type: ROUTING,
+        //     payload: {
+        //         method: 'push',
+        //         nextUrl: '/main'
+        //     }
+        // })
+    }
+}
 
  export function logout() {
    return {
@@ -64,7 +89,6 @@ export function loginActions(data) {
 		 	setAuthorizationToken(token);
 
 		 });
-              dispatch({ type: 'LOGIN_REQUEST', payload: data });
 	}
 }
 const id  = window.localStorage.getItem('id');
@@ -76,7 +100,8 @@ const id  = window.localStorage.getItem('id');
              }).then( res => {
            userAPI = res.data;
            console.log(userAPI);
-         });
+           return userAPI;
+         })
 
-        dispatch({ type: 'LOGIN_RESPONSE', payload: userAPI });
+        // dispatch({ type: 'LOGIN_RESPONSE', payload: userAPI });
  }
