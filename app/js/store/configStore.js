@@ -6,7 +6,8 @@ import { rootReducer } from '../redux/reducers/reducer.js';
 import { redirect } from '../redux/middleware/redirect';
 
 export default function configureStore() {
-  const store = compose(
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = composeEnhancers(
     applyMiddleware(thunkMiddleware),
     applyMiddleware(createLogger()),
     applyMiddleware(redirect)
