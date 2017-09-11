@@ -3,8 +3,6 @@ import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Menu from '../../components/Menu/Menu.js';
-// import {getData} from "../../components/Actions/loginActions";
-import { getApi} from '../../components/Actions/loginActions.js';
 
 var clientData = {
 	cliend_id: 1,
@@ -13,16 +11,9 @@ var clientData = {
 };
 
 
-const initialState = getApi();
-// constructor(props){
-//     super(props);
-//     this.state = {
-//     	data: initialState};
-// }
-
 require('./Main.scss');
 
- class Main extends Component {
+ export default class Main extends Component {
      render() {
          return (
 			 <div className="home">
@@ -76,13 +67,4 @@ require('./Main.scss');
          );
      }
  }
-function mapStateToProps() {
-    return {}
-}
 
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(getApi, dispatch)
-    }
-}
-  export default connect(null, {getApi}) (Main);

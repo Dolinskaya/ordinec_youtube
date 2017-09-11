@@ -1,6 +1,7 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { rootReducer } from '../redux/reducers/reducer.js';
 import { redirect } from '../redux/middleware/redirect';
@@ -9,6 +10,7 @@ export default function configureStore() {
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const store = composeEnhancers(
     applyMiddleware(thunkMiddleware),
+        applyMiddleware(thunk),
     applyMiddleware(createLogger()),
     applyMiddleware(redirect),
   )(createStore)(rootReducer)

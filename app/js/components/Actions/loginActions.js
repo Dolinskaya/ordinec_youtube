@@ -14,15 +14,12 @@ import {
 import {
   ROUTING
 } from '../../constants/Routing.js';
-let userAPI;
 let token;
 
  export function login(payload) {
    return (dispatch) => {
 
-     dispatch({type: LOGIN_REQUEST,
-         payload : loginActions()
-     })
+     dispatch(loginActions(payload))
        // dispatch(loginActions(payload))
 
        dispatch({
@@ -31,10 +28,6 @@ let token;
            name: payload.username,
            isAuthenticated: true
          }
-       })
-       dispatch({
-           type: LOGIN_RESPONSE,
-           payload: getData()
        })
        dispatch({
          type: ROUTING,
@@ -46,27 +39,7 @@ let token;
    }
  }
 
-export function getApi(payload, userAPI) {
-    return (dispatch) => {
 
-        dispatch({type: API_REQUEST,
-            payload : payload
-        })
-        dispatch({
-            type: API_SUCCESS,
-            payload: {
-                data: userAPI,
-            }
-        })
-        // dispatch({
-        //     type: ROUTING,
-        //     payload: {
-        //         method: 'push',
-        //         nextUrl: '/main'
-        //     }
-        // })
-    }
-}
 
  export function logout() {
    return {
@@ -91,17 +64,3 @@ export function loginActions(data) {
 		 });
 	}
 }
-const id  = window.localStorage.getItem('id');
- export const getData = () => dispatch => {
-         return axios({
-             method: 'get',
-                url: 'https://webmaster-api.ordinec.ru/v1/users/'+id,
-             headers: {Authorization: 'Bearer ' + localStorage.getItem('accessToken')}
-             }).then( res => {
-           userAPI = res.data;
-           console.log(userAPI);
-           return userAPI;
-         })
-
-        // dispatch({ type: 'LOGIN_RESPONSE', payload: userAPI });
- }

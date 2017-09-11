@@ -1,11 +1,24 @@
 import React, {cloneElement, Component} from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { loadInfo} from '../Actions/userActions.js';
 //import NavLink from '../../components/NavLink/NavLink';
 //import Orc from './images/lk-big-orc-level-1.png'
 require('./Menu.scss');
 
+
+    @connect(state => ({
+        info: state.info
+    }))
 class Menu extends React.Component {
-      render() {
+
+
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(loadInfo()) // Вызываем загрузку
+    }
+
+    render() {
             return (
                 <div className="menu">
                 <div className="header menu-header">

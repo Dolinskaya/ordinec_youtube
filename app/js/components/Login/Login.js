@@ -72,12 +72,12 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-// Login.propTypes = {
-//   loginActions: React.PropTypes.func.isRequired
-// }
+Login.propTypes = {
+  login: React.PropTypes.func.isRequired
+}
 
-// Login.contextTypes = {
-//   router: React.PropTypes.object.isRequired
-// }
+Login.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}
 
 export default connect(null, {login}) (Login);
