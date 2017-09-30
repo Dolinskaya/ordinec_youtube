@@ -21,21 +21,21 @@ let token;
 
      dispatch(loginActions(payload))
        // dispatch(loginActions(payload))
-
-       dispatch({
-         type: LOGIN_SUCCESS,
-         payload: {
-           name: payload.username,
-           isAuthenticated: true
-         }
-       })
-       dispatch({
-         type: ROUTING,
-         payload: {
-           method: 'push',
-           nextUrl: '/main'
-         }
-       })
+       //
+       // dispatch({
+       //   type: LOGIN_SUCCESS,
+       //   payload: {
+       //     name: payload.username,
+       //     isAuthenticated: true
+       //   }
+       // })
+       // dispatch({
+       //   type: ROUTING,
+       //   payload: {
+       //     method: 'push',
+       //     nextUrl: '/main'
+       //   }
+       // })
    }
  }
 
@@ -52,15 +52,63 @@ export function loginActions(data) {
 	return dispatch => {
 		 return axios.post('https://auth2.ordinec.ru/oauth2/token', data)
 		 .then( res => {
-		 	localStorage.setItem('accessToken', res.data.access_token);
-             localStorage.setItem('expires_in', res.data.expires_in);
+		     dispatch({
+                 type: LOGIN_SUCCESS,
+                 payload: {
+                     name: data.username,
+                     isAuthenticated: true,
+                     getToken: res.data
+                 }
+             })
+             localStorage.setItem('accessToken', res.data.access_token);
              localStorage.setItem('refreshToken', res.data.refresh_token);
-             localStorage.setItem('id', res.data.user_id);
+             localStorage.setItem('user_id', res.data.user_id);
+             localStorage.setItem('expires_in', res.data.expires_in);
+             dispatch({
+                 type: ROUTING,
+                 payload: {
+                     method: 'push',
+                     nextUrl: '/main'
+                 }
+             })
 
-             token = localStorage.getItem('accessToken');
-             console.log(token);
-		 	setAuthorizationToken(token);
-
-		 });
+		 })
+             .catch(result => {
+                 dispatch({
+                     type: 'LOGIN_FAIL',
+                     errors: res.statusText
+                 })
+             })
 	}
+}
+
+
+
+
+export function loadInfo() {
+    return dispatch => {
+
+        dispatch(getData());
+    }
+}
+
+
+const id  = window.localStorage.getItem('id');
+export const getData = () => dispatch => {
+    return axios({
+        method: 'get',
+        url: 'https://webmaster-api.ordinec.ru/v1/users/'+id,
+        headers: {Authorization: 'Bearer ' + localStorage.getItem('accessToken')}
+    }).then( res => {
+        dispatch({
+            type: 'LOAD_INFO_OK',
+            info: res.data
+        })
+    })
+        .catch(res => {
+            dispatch({
+                type: 'LOAD_INFO_FAIL',
+                errors: res.statusText
+            })
+        })
 }

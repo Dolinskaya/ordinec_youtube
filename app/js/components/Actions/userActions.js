@@ -14,13 +14,11 @@ export function loadInfo() {
     return dispatch => {
 
         dispatch(getData());
-
-        // getData();
     }
 }
 
 
-const id  = window.localStorage.getItem('id');
+const id  = window.localStorage.getItem('user_id');
 export const getData = () => dispatch => {
     return axios({
         method: 'get',
@@ -32,15 +30,10 @@ export const getData = () => dispatch => {
             info: res.data
             })
         })
-        .catch(result => {
+        .catch(res => {
             dispatch({
                 type: 'LOAD_INFO_FAIL',
-                errors: result.statusText
+                errors: res.statusText
             })
         })
-
-        // userAPI = res.data;
-        // console.log(userAPI);
-
-    // dispatch({ type: 'LOGIN_RESPONSE', payload: userAPI });
 }

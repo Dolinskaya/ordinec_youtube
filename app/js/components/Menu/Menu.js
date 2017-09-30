@@ -2,23 +2,31 @@ import React, {cloneElement, Component} from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { loadInfo} from '../Actions/userActions.js';
-//import NavLink from '../../components/NavLink/NavLink';
-//import Orc from './images/lk-big-orc-level-1.png'
+import Token from '../../containers/Auth/Token.js';
 require('./Menu.scss');
 
-
-    @connect(state => ({
-        info: state.info
-    }))
 class Menu extends React.Component {
 
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            token: Token.token ? true : false
+        };
+    }
     componentDidMount() {
-        const { dispatch } = this.props;
-        dispatch(loadInfo()) // Вызываем загрузку
+        const { dispatch } = this.props
+            dispatch(loadInfo())
     }
 
     render() {
+        const info = this.props.info;
+        const loading = this.props.loading;
+        console.log(info);
+            if (!loading){
+                console.log('Загрузка закончилась');
+            }else{
+                console.log('Ожидайте, загрузка');
+            }
             return (
                 <div className="menu">
                 <div className="header menu-header">
@@ -56,13 +64,13 @@ class Menu extends React.Component {
                 <div className="emulation-tbody__tr">
                     <span className="emulation-tbody__td">Доступно</span>
                     <span className="emulation-tbody__td td-right">
-                        <span id="balance">25.068,00</span> Р.
+                        <span id="balance">{!loading ? info.balance : ''}</span> Р.
                     </span>
                 </div>
                 <div className="emulation-tbody__tr">
                     <span className="emulation-tbody__td">Холд</span>
                     <span className="emulation-tbody__td td-right">
-                        <span id="hold">0,00</span> Р.
+                        <span id="hold">{!loading ? info.hold : ''}</span> Р.
                     </span>
                 </div>
             </div>
@@ -74,7 +82,22 @@ class Menu extends React.Component {
     </div>
     {this.props.children}
     </div>
-                )
-      }
+    )
+    }
 }
-export default (Menu);
+
+
+
+function mapStateToProps (state) {
+    return {
+        info: state.info.info,
+        errors: state.info.errors,
+        loading: state.info.loading
+    }
+}
+
+// Menu.propTypes = {
+//     info.balace: React.PropTypes.string.isRequired
+// }
+
+export default connect(mapStateToProps)(Menu);

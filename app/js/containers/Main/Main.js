@@ -10,10 +10,19 @@ var clientData = {
 	send_ballance: 'url..'
 };
 
-
 require('./Main.scss');
 
- export default class Main extends Component {
+
+// @connect(state => ({
+//     user: this.props.info.info
+// }))
+export default class Main extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			user: this.props.info
+		}
+	}
      render() {
          return (
 			 <div className="home">
@@ -27,7 +36,7 @@ require('./Main.scss');
 							 <div className="big-ork"></div>
 							 <div className="chise"></div>
 						 </div>
-						 <h1>в вашей казне <span id="user-ballance">{clientData.user_ballance} руб.</span></h1>
+						 <h1>в вашей казне <span id="user-ballance">{!this.props.loading ? this.props.user.balance : ''} руб.</span></h1>
 						 <div className="btn-overlay">
 							 <button className="sml-btn sml-btn-blue">Заказать выплату</button>
 						 </div>
@@ -63,8 +72,15 @@ require('./Main.scss');
 						 <span>© 2017. Ордынец</span>
 					 </div>
 				 </footer>
+                 {this.props.children}
 			 </div>
          );
      }
  }
 
+
+function mapStateToProps (state) {
+    return {
+        user: state.info.info,
+    }
+}

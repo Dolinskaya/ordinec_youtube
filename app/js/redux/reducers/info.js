@@ -5,7 +5,7 @@ import {
     LOAD_INFO_FAIL
 } from '../../constants/userInfo.js';
 
-const defaultState = { loading: false, info: null, errors: null };
+const defaultState = { loading: true, info: null, errors: null };
 
 export default function info(state = defaultState, action) {
     switch (action.type) {

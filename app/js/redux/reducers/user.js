@@ -5,10 +5,7 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS
 } from '../../constants/User.js';
-import {LOGIN_RESPONSE} from "../../constants/User";
-import userAPI from '../../components/Actions/loginActions.js';
 
-const initialState = userAPI;
 
 export default function userstate(state = {}, action) {
 
@@ -19,10 +16,8 @@ export default function userstate(state = {}, action) {
       return state
 
     case LOGIN_SUCCESS:
-      return {...state, name: action.payload.name, isAuthenticated: action.payload.isAuthenticated}
+      return {...state, name: action.payload.name, isAuthenticated: action.payload.isAuthenticated, data: action.payload.getToken}
 
-      case LOGIN_RESPONSE:
-        return {...state, data: action.payload.userAPI}
 
     case LOGIN_FAIL:
       // TODO
